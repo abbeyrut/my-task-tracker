@@ -1,48 +1,32 @@
-import {useState} from 'react'
-import Tasks1 from "./component/Tasks1"
-import Head from "./component/Head"
+import React from 'react'
 
-const App = () => {const [tasks, setTasks] = useState ([
-  {
-  id: 1,
-  text: 'Assigment',
-  day: 'Mon 18:00',
-  reminder: true,
-},
-  {
-      id: 1,
-      text: 'Meeting',
-      day: 'Tue 10:00',
-      reminder: true,
-},
-  {
-          id: 1,
-          text: 'Travel',
-          day: 'Wed 13:00',
-          reminder: false,
-},
-])
-
-// Delete Task
-const deleteTask = (id) =>{
-setTasks(tasks.filter((task3) => task3.id !==id))
+const Blan = (props) =>{
+    return(
+        <form>
+          <p> My Names{props.name}, where do you {props.live}</p>   
+        </form>
+    )
 }
-  //Toggle Reminder
-  const toggleReminder =(id) =>{
-    setTasks(tasks.map((task3) => task3.id ===id ? {...task3, reminder: !task3.reminder} : task3))
-  }
+
+const App = () => {
+    const today = new Date()
+    const x = 25
+    const y = 37
+    const name = 'bab'
+    const live= 10
   return (
-    <div className='container'>
-      <Head />
-   { tasks.length > 0 ? <Tasks1
-    tasks={tasks} 
-    onDelete={deleteTask}
-    onToggle={toggleReminder}
-    /> :(' No Task Saved')}
-    
-    
+    <div>
+      <p> hello {today.toString}</p>
+      {y - x}
+      <Blan name='bib' />
+      <Blan name='lbob' />
+      < Blan  name= 'beib' live={10 + 29}/>
+      <Blan name={name} live={live}/>
+
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+export default App
