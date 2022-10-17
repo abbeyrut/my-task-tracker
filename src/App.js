@@ -1,32 +1,32 @@
 import React from 'react'
+import Content from './component/Content'
+import Header from './component/Header'
+import Total from './component/Total'
 
-const Blan = (props) =>{
-    return(
-        <form>
-          <p> My Names{props.name}, where do you {props.live}</p>   
-        </form>
-    )
-}
 
 const App = () => {
-    const today = new Date()
-    const x = 25
-    const y = 37
-    const name = 'bab'
-    const live= 10
-  return (
+    const course = "Half Stack application development"
+    const part1= 'Fundamentals of React'
+    const exercises1= 10
+    const part2= 'Using props to pass data'
+    const exercises2= 7
+    const part3='State of a component'
+    const exercises3=14
+    const sum= exercises1 + exercises2 + exercises3
+    
+    
+    return (
+        
     <div>
-      <p> hello {today.toString}</p>
-      {y - x}
-      <Blan name='bib' />
-      <Blan name='lbob' />
-      < Blan  name= 'beib' live={10 + 29}/>
-      <Blan name={name} live={live}/>
+     <Header coursen={course}/>
+    <Content part = {part1} exercises={exercises1} />
+    <Content part = {part2} exercises={exercises2} />
+    <Content part = {part3} exercises={exercises3} />
+    <Total total = {sum}/>
+
 
     </div>
   )
 }
-
-
 
 export default App
